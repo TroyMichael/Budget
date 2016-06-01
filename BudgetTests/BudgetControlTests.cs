@@ -22,5 +22,24 @@ namespace BudgetTests
             Assert.AreEqual(1, budget.expense.Count);
         }
 
+        [Test]
+        public void AddExpense_InvalidExpense_PositiveCost_ExpenseCountIs0()
+        {
+            BudgetControl budget = new BudgetControl();
+
+            budget.AddExpense("Katzenfutter", 10);
+
+            Assert.AreEqual(0, budget.expense.Count);
+        }
+
+        [Test]
+        public void AddExpense_InvalidExpense_NeutralCost_ExpenseCountIs0()
+        {
+            BudgetControl budget = new BudgetControl();
+
+            budget.AddExpense("Katzenfutter", 0);
+
+            Assert.AreEqual(0, budget.expense.Count);
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace Budget
 
         public void AddExpense(string name, double value)
         {
-            if (!string.IsNullOrEmpty(name) && value <= 0)
+            if (!string.IsNullOrEmpty(name) && value < 0)
             {
                 _expenses.AddLast(new Expense(name, value));
             }
